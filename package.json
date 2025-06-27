@@ -1,0 +1,35 @@
+{
+  "name": "dzriekse.com",
+  "version": "1.0.0",
+  "private": true,
+  "description": "dzriekse.com",
+  "author": "Zumi Riekse",
+  "keywords": [
+    "gatsby"
+  ],
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean"
+  },
+  "dependencies": {
+    "@mdx-js/react": "^3.1.0",
+    "autoprefixer": "^10.4.21",
+    "gatsby": "^5.14.1",
+    "gatsby-plugin-image": "^3.14.0",
+    "gatsby-plugin-mdx": "^5.14.1",
+    "gatsby-plugin-netlify-cms": "^7.12.1",
+    "gatsby-plugin-postcss": "^6.14.0",
+    "gatsby-plugin-sharp": "^5.14.0",
+    "gatsby-plugin-sitemap": "^6.14.0",
+    "gatsby-source-filesystem": "^5.14.0",
+    "gatsby-transformer-sharp": "^5.14.0",
+    "netlify-cms-app": "^2.15.72",
+    "postcss": "^8.5.6",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "tailwindcss": "^4.1.11"
+  }
+}
