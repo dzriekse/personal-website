@@ -5,7 +5,7 @@ import Seo from '../../components/seo'
 
 const ProjectsPage = ({data}) => {
   return (
-    <Layout pageTitle="My Projects">
+    <Layout pageTitle="projects">
         {
             data.allMdx.nodes.map((node) => (
               <article key={node.id}>
@@ -39,6 +39,6 @@ export const query = graphql`
   }
 `
 
-export const Head = () => <Seo title="My Projects" />
+export const Head = () => <Seo title="projects" />
 
 export default ProjectsPage

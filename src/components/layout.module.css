@@ -1,7 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka&family=Baloo+2&family=Archivo+Black&family=Bebas+Neue&family=Jost&display=swap");
+@import url(https://fonts.googleapis.com/css2?family=Noto+Sans+Mono&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Nata+Sans&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Figtree&display=swap);
+
 .container {
   margin: auto;
-  max-width: 500px;
-  font-family: "Monaco", "Lucida Console", monospace;
+  max-width: 700px;
+  font-family: "Nata Sans", "Monaco", "Lucida Console", monospace;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between; /* aligns nav to the right */
+  align-items: center;            /* vertically centers title and nav */
+  flex-wrap: wrap;                /* wraps on small screens if needed */
+  margin-bottom: 1rem;
 }
 
 .heading {
@@ -14,14 +28,33 @@
 }
 .nav-link-item {
   padding-right: 2rem;
+  text-decoration: none;
+  color: inherit;
 }
 .nav-link-text {
-  color: black;
+  color: rgb(137, 102, 147);
+  text-decoration: none;
+}
+
+.nav-link-text:hover {
+  text-decoration: underline;
 }
 
 .site-title {
-  font-size: 3rem;
-  color: gray;
-  font-weight: 700;
+  font-size: 1.5rem;
+  color: rgb(137, 102, 147);
+  font-weight: 600;
   margin: 3rem 0;
+  margin-right: 3rem;
+  font-family: "Noto Sans Mono", monospace;
+}
+
+.siteTitleLink {
+  text-decoration: none;
+  color: inherit;
+}
+
+.siteTitleLink:hover {
+  text-decoration: inherit; /* can change to underline later maybe??? */
+  color: inherit;
 }
