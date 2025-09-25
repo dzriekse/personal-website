@@ -41,7 +41,7 @@ const IndexPage = () => {
         <nav className={styles.actions} aria-label="Primary">
           <TransitionLink className={styles.btn} to="/about">About</TransitionLink>
           <TransitionLink className={styles.btn} to="/projects">Projects</TransitionLink>
-          <TransitionLink className={styles.btn} to="/contact">Contact</TransitionLink>
+          {/* <TransitionLink className={styles.btn} to="/contact">Contact</TransitionLink> */}
         </nav>
       </div>
   )
