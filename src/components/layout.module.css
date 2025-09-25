@@ -6,8 +6,10 @@
 
 .container {
   margin: auto;
-  max-width: 700px;
+  max-width: 900px;
   font-family: "Nata Sans", "Monaco", "Lucida Console", monospace;
+  color: #333;
+  /* font-size: 0.5rem; */
 }
 
 .header {
@@ -15,7 +17,10 @@
   justify-content: space-between; /* aligns nav to the right */
   align-items: center;            /* vertically centers title and nav */
   flex-wrap: wrap;                /* wraps on small screens if needed */
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;              /* keep it above page content */
 }
 
 .heading {

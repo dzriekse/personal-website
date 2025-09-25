@@ -11,10 +11,24 @@ import {
   siteTitleLink,
   header
 } from './layout.module.css'
+import TransitionLink from 'gatsby-plugin-transition-link'
+import TypingText from './typingtext.js'
+import { useEffect, useState, useRef } from 'react';
+
 
 const Layout = ({ pageTitle, children }) => {
+
+  const [hydrated, setHydrated] = useState(false);
+  useEffect(() => { setHydrated(true); }, []);
+
   const location = useLocation()
-  const cleanPath =  location.pathname.replace(/\/$/, '') 
+  const pathname = typeof window !== 'undefined' && location?.pathname
+    ? location.pathname
+    : '';
+  console.clear();
+  console.log("this is the pathname")
+  console.log(pathname)
+  const cleanPath = pathname.replace(/\/$/, '') // location.pathname
   const data = useStaticQuery(graphql`
     query {
       site {
@@ -24,26 +38,29 @@ const Layout = ({ pageTitle, children }) => {
       }
     }
   `)  
+  const full = `${data.site.siteMetadata.title}${cleanPath}`
   return (
     <div className={container}>
       <header className={header}>
         <h1 className={siteTitle}>
-          <Link to="/" className={siteTitleLink}>
-            {data.site.siteMetadata.title}{cleanPath}
-          </Link>
+          <TransitionLink to="/" className={siteTitleLink}>
+            {full ? (
+              <TypingText key={cleanPath} text={full} />
+            ) : null}
+          </TransitionLink>
         </h1>
 
         <nav>
           <ul className={navLinks}>
             <li className={navLinkItem}>
-              <Link to="/about" className={navLinkText}>
+              <TransitionLink to="/about" className={navLinkText}>
                 About
-              </Link>
+              </TransitionLink>
             </li>
             <li className={navLinkItem}>
-              <Link to="/projects" className={navLinkText}>
+              <TransitionLink to="/projects" className={navLinkText}>
                 Projects
-              </Link>
+              </TransitionLink>
             </li>
           </ul>
         </nav>

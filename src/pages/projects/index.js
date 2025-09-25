@@ -2,23 +2,34 @@ import * as React from 'react'
 import Layout from '../../components/layout'
 import { Link, graphql } from 'gatsby'
 import Seo from '../../components/seo'
+import {
+  projectGrid,
+  projectCard,
+  projectImage,
+  projectTitle,
+  projectDate,
+  projectExcerpt,
+} from './projects.module.css'
 
 const ProjectsPage = ({data}) => {
   return (
     <Layout pageTitle="projects">
+      <div className={projectGrid}>
         {
             data.allMdx.nodes.map((node) => (
               <article key={node.id}>
-                <h2>
-                  <Link to={`/projects/${node.frontmatter.slug}`}>
-                    {node.frontmatter.title}
+                  <Link 
+                    to={`/projects/${node.frontmatter.slug}`}
+                    className={projectCard}
+                    >
+                    <h2 className={projectTitle}>{node.frontmatter.title}</h2>
+                    <p className={projectDate}>{node.frontmatter.date}</p>
+                    <p className={projectExcerpt}>{node.excerpt}</p>
                   </Link>
-                </h2>
-                <p>Posted: {node.frontmatter.date}</p>
-                <p>{node.excerpt}</p>
               </article>
             ))
         }
+      </div>
     </Layout>
   )
 }
@@ -39,6 +50,6 @@ export const query = graphql`
   }
 `
 
-export const Head = () => <Seo title="projects" />
+export const Head = () => <Seo title="Projects" />
 
 export default ProjectsPage

@@ -23,6 +23,6 @@ export const query = graphql`
   }
 `
 
-export const Head = () => <Seo title="Super Cool Projects" />
+export const Head = () => <Seo title="Projects" />
 
 export default ProjectPost

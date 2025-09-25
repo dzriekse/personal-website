@@ -2,21 +2,52 @@ import * as React from "react"
 import Layout from '../components/layout'
 import { StaticImage } from 'gatsby-plugin-image'
 import Seo from '../components/seo'
+import * as styles from './index.module.css'
+import TransitionLink from 'gatsby-plugin-transition-link'
+import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
 
 // Step 2: Define your component
 const IndexPage = () => {
   return (
-    <Layout pageTitle="home">
-        <p>I'm making this by following the Gatsby Tutorial.</p>
+    <div className={styles.box}>
+        <h1 className={styles.siteTitle}>
+         DANIELLE ZUMI RIEKSE 
+        <span className={styles.socials}>
+            <a
+              className={styles.iconLink}
+              href="https://github.com/dzriekse"
+              aria-label="GitHub (opens in new tab)"
+              target="_blank" rel="noopener noreferrer"
+            >
+              <FaGithub className={styles.icon} />
+            </a>
+            <a
+              className={styles.iconLink}
+              href="https://www.linkedin.com/in/danielle-riekse-948177209/"
+              aria-label="LinkedIn (opens in new tab)"
+              target="_blank" rel="noopener noreferrer"
+            >
+              <FaLinkedin className={styles.icon} />
+            </a>
+          </span>
+        </h1>
+        <p>Hi! My name is Danielle Riekse, but you can call me Zumi. I'm currently a second year at the 
+          University of Chicago pursuing a B.S. in physics and computer science. I love quantum, optics, and computer science, and 
+          I'm excited to find my niche in the field. Thanks for following along with my journey.</p>
         {/* <StaticImage
           alt="Clifford, a reddish-brown pitbull, posing on a couch and looking stoically at the camera"
           src="https://pbs.twimg.com/media/E1oMV3QVgAIr1NT?format=jpg&name=large"
         />         */}
-      </Layout>
+        <nav className={styles.actions} aria-label="Primary">
+          <TransitionLink className={styles.btn} to="/about">About</TransitionLink>
+          <TransitionLink className={styles.btn} to="/projects">Projects</TransitionLink>
+          <TransitionLink className={styles.btn} to="/contact">Contact</TransitionLink>
+        </nav>
+      </div>
   )
 }
 
-export const Head = () => <Seo title="home" />
+export const Head = () => <Seo title="Landing" />
 
 export default IndexPage
 
