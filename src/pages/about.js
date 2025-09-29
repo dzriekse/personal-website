@@ -19,7 +19,7 @@ const AboutPage = () => {
               {/* Resume button under the picture */}
               <a
                 href="/Zumi_Riekse_Resume.pdf"   // place your PDF inside /static/
-                target="_blank"
+                target="https://drive.google.com/file/d/13rsEYoBhcdQo40sWxSHiDA-8T4mB7pRJ/view?usp=sharing"
                 rel="noopener noreferrer"
                 className={styles.resumeButton}
               >
